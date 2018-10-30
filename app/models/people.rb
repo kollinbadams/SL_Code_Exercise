@@ -1,0 +1,1 @@
+people.rb file placeholder
