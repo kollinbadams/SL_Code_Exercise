@@ -21,4 +21,10 @@ Model - tells how to form the data that is received in a response
  ->Job Title
 View - displays the resulting data.
 
+Files Needed:
+client/src/components/People.js -> for the main people page logic
+client/src/components/PeopleTable.js -> for formatting the data into a table
+app/models/people.rb -> to add the API connection/authorization info, and to create a data getter, instruct how to form data
+app/controllers/api/people_controller.rb -> handle the api response
+
 
