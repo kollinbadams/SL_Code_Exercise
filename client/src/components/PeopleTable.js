@@ -1,0 +1,1 @@
+//PeopleTable.js file placeholder
