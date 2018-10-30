@@ -1,0 +1,24 @@
+Sales Loft App - Initial Thoughts
+
+Environment is working and set up following the getting started instructions.
+
+Using Windows Subsytem to run Ubuntu.
+
+Insert API Key to .Env File
+
+Based on the API Documentation, I will need to add Authorization headers
+and URL paths to access the API Data
+
+
+Level 1:
+Landing page that pulls "people" data from the API. 
+Display in an HTML grid, unless the API can display it natively in a pretty format.
+Will need a Controller, a Model, and a View. 
+Controller - sends request to fetch data from API
+Model - tells how to form the data that is received in a response 
+ ->Name (First and Last?)
+ ->Email Address
+ ->Job Title
+View - displays the resulting data.
+
+
