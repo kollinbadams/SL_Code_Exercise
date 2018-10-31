@@ -27,4 +27,6 @@ client/src/components/PeopleTable.js -> for formatting the data into a table
 app/models/people.rb -> to add the API connection/authorization info, and to create a data getter, instruct how to form data
 app/controllers/api/people_controller.rb -> handle the api response
 
+update -> needed to add items to actions files amd const files to wire up functionality properly
+
 
