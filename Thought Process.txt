@@ -9,7 +9,7 @@ Insert API Key to .Env File
 Based on the API Documentation, I will need to add Authorization headers
 and URL paths to access the API Data
 
-
+------------------------------------------------------------------------------------------------------
 Level 1:
 Landing page that pulls "people" data from the API. 
 Display in an HTML grid, unless the API can display it natively in a pretty format.
@@ -28,5 +28,22 @@ app/models/people.rb -> to add the API connection/authorization info, and to cre
 app/controllers/api/people_controller.rb -> handle the api response
 
 update -> needed to add items to actions files amd const files to wire up functionality properly
+update 2 -> had to add items to routes.rb, create table and migrate to schema, added items to reducers. 
+Tested and am successfully pulling back data from API and can display it. 
+
+Style clean up needed. Front end table error persists, but can be cleaned up with the styling.
+
+------------------------------------------------------------------------------------------------------
+
+Level 2:
+Need to create a front end page that includes a button and the grid to display the letter:count.
+Since we are pulling back all the data I need, now I can manipulate it for Level 2. And I shouldnt need anymore
+controllers or routing wiring up. Therefore I could put methods in the /util/ directory and export them for use in the front end.
+
+Thoughts on how to handle the counting - maybe use a dictionary with key(character):value(character count) pairs,
+but that may go against the requirements as it could have a built in function to handle counting.
+
+Could use an array, but heavier manual counting will be needed. Utilizing loops to count the characters. 
+
 
 
