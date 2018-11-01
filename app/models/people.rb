@@ -3,14 +3,17 @@ class People < ApplicationRecord
 	
 	API_BASE_URL = "https://api.salesloft.com/v2"
 	#Tell the API to look for people, and per page function
-	SUB_PATH = "/people.json?per_page="
 	#Test Page Size Function
-	PAGE_SIZE = "1"
+	PAGE_SIZE = "2"
+	#Tell the API to look for people, and per page function
+	SUB_PATH = "/people?per_page=#{PAGE_SIZE}"
 	#Create full URL string
-	URL = "#{API_BASE_URL}#{SUB_PATH}#{PAGE_SIZE}"
+	URL = "#{API_BASE_URL}#{SUB_PATH}"
 	#Include specified Headers, and reference API KEY
 	HEADERS = {"Authorization" => "Bearer #{ENV.fetch("SALESLOFT_API_KEY")}"}
 
+	puts "TEST"
+	
 	#Fetch data using HTTParty with URL and HEADERS
 	def fetch_data
 		api_response = HTTParty.get(URL, headers: HEADERS)
