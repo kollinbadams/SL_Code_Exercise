@@ -15,7 +15,8 @@ class People extends Component {
 	//Mount the response to the props and state to be passed through the components
 	componentDidMount(){
 		this.props.getPeople().
-		then( r => this.setState({people: r.people}) )
+		then( (r) => console.log(r))
+		//then( (r) => this.setState({people: r.people}) )
 	}
 	//Render the Table with data from API
 	//Can Swap div for a stylized container after testing functionality
