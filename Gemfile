@@ -20,6 +20,7 @@ gem 'omniauth'
 gem 'foreman'
 gem 'rake'
 gem 'dotenv-rails'
+gem 'httparty', '~> 0.16.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
