@@ -20,6 +20,7 @@ tr:nth-child(even) {
 }
 `;
 
+//Pass props into the count table for displaying, using the character as the key to each row
 const CharacterCountTable = (props) => {
 	return(
 		<Container>
