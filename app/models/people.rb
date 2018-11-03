@@ -1,20 +1,19 @@
 class People < ApplicationRecord
 	include HTTParty
+	#Added validator to prevent duplicating data in the db on page reload
+	#Only allows new or non existing data to be added
 	validates :pid, uniqueness: true
 
 
 	API_BASE_URL = "https://api.salesloft.com/v2"
-	#Test Page Size Function
+	#Get max Page Size 
 	PAGE_SIZE = "100"
 	#Tell the API to look for people, and per page function
 	SUB_PATH = "/people?per_page=#{PAGE_SIZE}"
-	#SUB_PATH = "/people"
 	#Create full URL string
 	URL = "#{API_BASE_URL}#{SUB_PATH}"
 	#Include specified Headers, and reference API KEY
 	HEADERS = {"Authorization" => "Bearer #{ENV.fetch("SALESLOFT_API_KEY")}"}
-
-	#TODO Add get method, and initialize people object
 
 	puts "TEST"
 	
@@ -28,13 +27,12 @@ class People < ApplicationRecord
 	people = People.new
 
 	#test fetch_data results
-	puts JSON.pretty_generate(people.fetch_data)
+	#puts JSON.pretty_generate(people.fetch_data)
 
 	#implementation:
 	people.fetch_data.each do |item|
-	#	puts JSON.pretty_generate(item)
 		People.create do |p|
-	#		Attempting to get full name from API instead of first and last, then combining them
+	#		Updated model, to include person's id number, for more robust validation
 			p.pid = item["id"]
 			p.display_name = item["display_name"]
 			p.email_address = item["email_address"]
