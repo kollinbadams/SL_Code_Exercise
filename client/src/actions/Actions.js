@@ -13,3 +13,10 @@ export function getPeople(people) {
 		people
 	}
 }
+
+export function getCount(charDict){
+	return {
+		type: actions.GET_COUNT,
+		charDict
+	}
+}

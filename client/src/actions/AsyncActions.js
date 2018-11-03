@@ -17,3 +17,11 @@ export function getPeople() {
 			then(people => dispatch(actions.getPeople(people)));
 	}
 }
+
+export function getCount() {
+	return dispatch => {
+		return fetch('api/count').
+			then(response => response.json()).
+			then(count => dispatch(actions.getCount(charDict)));
+	}
+}
